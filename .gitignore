@@ -1,0 +1,13 @@
+venv/
+database/meetings.db
+.env
+__pycache__/
+*.pyc
+*.pyo
+uploads/
+*.pt
+*.log
+.vscode/
+Thumbs.db
+desktop.ini
+{backend,models,database,utils,static}/
