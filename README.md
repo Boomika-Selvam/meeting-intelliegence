@@ -40,9 +40,9 @@ meeting-intelligence/
 | Frontend | Vanilla HTML/CSS/JavaScript (SPA, no build step) |
 | Backend | Python FastAPI + Uvicorn |
 | Speech-to-Text | OpenAI Whisper (`openai-whisper`) |
-| Summarization | DistilBART / T5 (`transformers` / HuggingFace) |
+| Summarization | LLaMa by Groq |
 | NLP Extraction | Rule-based regex + keyword patterns |
-| Database | SQLite (built-in Python, no server needed) |
+| Database | MySQL (built-in Python, no server needed) |
 | Authentication | JWT tokens + bcrypt password hashing |
 
 ---
@@ -126,7 +126,7 @@ Then open your browser: **http://localhost:8000**
 Watch the live step-by-step progress:
 1. File upload
 2. Audio transcription (Whisper)
-3. Summary generation (T5/BART)
+3. Summary generation (LLaMa)
 4. Action item extraction
 5. Deadline detection
 6. Database storage
@@ -209,10 +209,10 @@ All endpoints except auth require `Authorization: Bearer <token>` header.
 - Upgrade to `small`, `medium`, or `large` for better accuracy
 - Change in `models/transcriber.py` → `transcribe(file_path, model_size="small")`
 
-### Summarization (T5/BART)
+### Summarization (LLaMa)
 - Default: `sshleifer/distilbart-cnn-12-6` (fast, good quality)
 - Falls back to extractive summarization if model fails to load
-- First run downloads model (~1GB) from HuggingFace
+
 
 ### Task Extraction
 - Keyword patterns: `will, should, must, need to, responsible for, follow up...`
