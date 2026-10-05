@@ -18,11 +18,11 @@ meeting-intelligence/
 │
 ├── models/
 │   ├── transcriber.py        # Whisper speech-to-text + audio extraction
-│   └── nlp_processor.py      # T5 summarization + task/deadline extraction
+│   └── nlp_processor.py      # LLaMa by Groq
 │
 ├── database/
-│   ├── db.py                 # SQLite schema + all DB operations
-│   └── meetings.db           # SQLite database (auto-created)
+│   ├── db.py                 # MySQL schema + all DB operations
+│   └── meetings.db           # MySQL database (auto-created)
 │
 ├── utils/
 │   └── auth.py               # JWT authentication + password hashing
